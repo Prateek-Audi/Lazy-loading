@@ -1,14 +1,12 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
-import MasterPage from "./components/MasterPage";
+import ProductList from "./components/ProductList";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/master" element={<MasterPage />} />
+        <Route path="/" element={<ProductList />} />
       </Routes>
     </Router>
   );
