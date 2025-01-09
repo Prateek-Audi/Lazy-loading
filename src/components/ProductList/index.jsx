@@ -25,7 +25,11 @@ const ProductList = () => {
       if (!response.ok) throw new Error("Failed to fetch products");
       const data = await response.json();
       const { record } = data;
-      setProducts((prev) => [...prev, ...record]);
+      setProducts((prev) => {
+        const uniqueIds = new Set(prev.map((p) => p.id));
+        const uniqueNewProducts = record.filter((p) => !uniqueIds.has(p.id));
+        return [...prev, ...uniqueNewProducts];
+      });
     } catch (err) {
       setError(err.message);
     } finally {
@@ -35,7 +39,7 @@ const ProductList = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, [fetchProducts]);
+  }, [page]);
 
   useEffect(() => {
     const handleScroll = () => {
