@@ -20,7 +20,7 @@ const ProductList = () => {
       setLoading(true);
       setError(null);
       const response = await fetch(
-        "https://api.jsonbin.io/v3/qs/67803493ad19ca34f8e877c0"
+        "https://api.jsonbin.io/v3/qs/678042bdacd3cb34a8c70029"
       );
       if (!response.ok) throw new Error("Failed to fetch products");
       const data = await response.json();
@@ -64,8 +64,46 @@ const ProductList = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="container mx-auto px-6 py-12">
+      <h1 className="text-4xl font-bold mb-6">Get Inspired</h1>
+      <p className="text-lg text-gray-600 mb-8">
+        Browsing for your next long-haul trip, everyday journey, or just fancy a
+        look at what's new? From community favourites to about-to-sell-out
+        items, see them all here.
+      </p>
+
+      {/* Fancy Filters */}
+      <div className="mb-8 flex flex-wrap gap-4">
+        <select className="px-4 py-2 border rounded-lg bg-white">
+          <option>All Categories</option>
+          <option>Backpacks</option>
+          <option>Accessories</option>
+        </select>
+        <select className="px-4 py-2 border rounded-lg bg-white">
+          <option>All Colors</option>
+          <option>Black</option>
+          <option>Yellow</option>
+        </select>
+        <select className="px-4 py-2 border rounded-lg bg-white">
+          <option>All Features</option>
+          <option>Waterproof</option>
+          <option>Eco-friendly</option>
+        </select>
+        <input
+          type="range"
+          min="0"
+          max="1000"
+          className="slider w-48"
+          title="Price Range"
+        />
+        <select className="px-4 py-2 border rounded-lg bg-white">
+          <option>Sort by</option>
+          <option>New In</option>
+          <option>Price: Low to High</option>
+        </select>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {products.slice(0, visibleProducts).map((product) => (
           <Suspense
             key={product.id}
