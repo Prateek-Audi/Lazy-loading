@@ -72,19 +72,18 @@ const ProductList = () => {
         items, see them all here.
       </p>
 
-      {/* Fancy Filters */}
       <div className="mb-8 flex flex-wrap gap-4">
-        <select className="px-4 py-2 border rounded-lg bg-white">
+        <select className="appearance-none px-4 py-2 border rounded-lg bg-white">
           <option>All Categories</option>
           <option>Backpacks</option>
           <option>Accessories</option>
         </select>
-        <select className="px-4 py-2 border rounded-lg bg-white">
+        <select className="appearance-none px-4 py-2 border rounded-lg bg-white">
           <option>All Colors</option>
           <option>Black</option>
           <option>Yellow</option>
         </select>
-        <select className="px-4 py-2 border rounded-lg bg-white">
+        <select className="appearance-none px-4 py-2 border rounded-lg bg-white">
           <option>All Features</option>
           <option>Waterproof</option>
           <option>Eco-friendly</option>
@@ -96,7 +95,7 @@ const ProductList = () => {
           className="slider w-48"
           title="Price Range"
         />
-        <select className="px-4 py-2 border rounded-lg bg-white">
+        <select className="appearance-none px-4 py-2 border rounded-lg bg-white">
           <option>Sort by</option>
           <option>New In</option>
           <option>Price: Low to High</option>
