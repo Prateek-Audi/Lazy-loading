@@ -20,7 +20,7 @@ const ProductList = () => {
       setLoading(true);
       setError(null);
       const response = await fetch(
-        "https://api.jsonbin.io/v3/qs/678042bdacd3cb34a8c70029"
+        "https://api.jsonbin.io/v3/qs/67804804ad19ca34f8e87fe8"
       );
       if (!response.ok) throw new Error("Failed to fetch products");
       const data = await response.json();
